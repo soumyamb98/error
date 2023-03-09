@@ -28,7 +28,7 @@ server.on("request", (req, res) => {
             // req.pipe(res);
         });
         // not working and throwing server error
-        res.end(req.pipe(res));
+        req.pipe(res);
     }
     if (req.method === "GET" && urlSplit[1] === "friends") {
         res.writeHead(200, {
