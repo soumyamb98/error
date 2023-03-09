@@ -30,7 +30,7 @@ server.on("request", (req, res) => {
         // not working and throwing server error
         req.pipe(res);
     }
-    if (req.method === "GET" && urlSplit[1] === "friends") {
+    else if (req.method === "GET" && urlSplit[1] === "friends") {
         res.writeHead(200, {
             "Content-Type": "application/json"
         });
