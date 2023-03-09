@@ -66,3 +66,5 @@ server.on("request", (req, res) => {
 server.listen(PORT, function () {
     console.log(`listening on port ${PORT}`);
 })
+
+// fetch("http://localhost:5400/friends",{method: "POST", body: JSON.stringify({id: 99, name: "RYAN DAHL"})}).then((response)=>{response.json()}).then((friend) =>{ console.log(friend, ": friend")});
