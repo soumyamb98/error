@@ -37,7 +37,12 @@ server.on("request", (req, res) => {
         if (urlSplit[2]) {
             const friendIndex = Number(urlSplit[2]);
             console.log(typeof urlSplit[2], "typeof urlSplit[2]")
-            res.end(JSON.stringify(friends[friendIndex]));
+            if (urlSplit[2] < friends.length) {
+                res.end(" 404 page not found");
+            } else {
+                res.end(JSON.stringify(friends[friendIndex]));
+            }
+            // res.end(JSON.stringify(friends[friendIndex]));
         } else {
             res.end(JSON.stringify(friends));
         }
